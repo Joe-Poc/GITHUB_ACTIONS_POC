@@ -37,10 +37,6 @@ jobs:
           cd master/active-learning-service
           pip install -r requirements.txt
           python -m spacy download en_core_web_md
-
-      
-      - name: run-al
-        run: |
-          cd master/active-learning-service
           python manage.py runserver localhost:8000 & 
+          
 
