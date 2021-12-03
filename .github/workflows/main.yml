@@ -41,9 +41,10 @@ jobs:
       - name: build-al
         run: |
           tree
+          pwd
           ls -l
           cd master/active-learning-service
-
+          tree
 #          python manage.py runserver localhost:8000 &
           
 
