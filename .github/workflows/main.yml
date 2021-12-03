@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-#         python-version: [3.6, 3.7, 3.8, 3.9]
-        python-version: [3.9]
+        python-version: [3.6, 3.7, 3.8, 3.9]
+#         python-version: [3.9]
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -31,14 +31,15 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           
-      - name: build-and-run-al
+      - name: build-al
         run: |
           git clone https://github.com/vmware/data-annotator-for-machine-learning.git master
           cd master/active-learning-service
           pip install -r requirements.txt
           python -m spacy download en_core_web_md
-          python manage.py runserver localhost:8000 & 
+
       
-      - name: end-task
+      - name: run-al
         run: |
-          echo ------------------END------------------
+          python manage.py runserver localhost:8000 & 
+
