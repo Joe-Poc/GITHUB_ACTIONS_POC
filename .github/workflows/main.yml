@@ -35,16 +35,12 @@ jobs:
         run: |
           git clone https://github.com/vmware/data-annotator-for-machine-learning.git master
           cd master/active-learning-service
-#          pip install -r requirements.txt
-#          python -m spacy download en_core_web_md
+          pip install -r requirements.txt
+          python -m spacy download en_core_web_md
       
       - name: build-al
         run: |
-          tree
-          pwd
-          ls -l
           cd master/active-learning-service
-          tree
-#          python manage.py runserver localhost:8000 &
+          python manage.py runserver localhost:8000 &
           
 
