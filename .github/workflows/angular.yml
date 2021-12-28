@@ -29,18 +29,22 @@ jobs:
           cd master/annotation-app
           npm i
       
-      - name: run-al
+      - name: run-app
         run: |
           cd master/annotation-app
           npm start &
           
-      - name: build-service
-        run: |
-          cd master/annotation-service
-          npm i
+#       - name: build-service
+#         run: |
+#           cd master/annotation-service
+#           npm i
 
-      - name: run-al
-        run: |
-          cd master/annotation-service
-          npm start &
+#       - name: run-service
+#         run: |
+#           cd master/annotation-service
+#           npm start &
 
+      - name: connect-application
+        run: |
+          sleep 10
+          curl localhost:4200
