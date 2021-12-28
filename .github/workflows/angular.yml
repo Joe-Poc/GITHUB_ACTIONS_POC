@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-#         node-version: [10.x, 12.x, 14.x, 15.x, 16.x]
-        node-version: [12.x]
+        node-version: [10.x, 12.x, 14.x, 15.x, 16.x]
+#         node-version: [12.x]
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,7 +26,7 @@ jobs:
           
       - name: build-app
         run: |
-          git clone https://github.com/Kai-Qiao/data-annotator-for-machine-learning.git master
+          git clone https://github.com/vmware/data-annotator-for-machine-learning.git master
           cd master/annotation-app
           npm i
       
@@ -34,19 +34,22 @@ jobs:
         run: |
           cd master/annotation-app
           npm start &
-          sleep 10
+          sleep 15
           
-#       - name: build-service
-#         run: |
-#           cd master/annotation-service
-#           npm i
+      - name: build-service
+        run: |
+          cd master/annotation-service
+          npm i
 
-#       - name: run-service
-#         run: |
-#           cd master/annotation-service
-#           npm start &
+      - name: run-service
+        run: |
+          cd master/annotation-service
+          npm start &
 
       - name: connect-application
         run: |
           sleep 10
+          echo ----------------------CONNECT TO THE APP------------------------------------
           curl http://localhost:4200
+          echo ----------------------CONNECT TO THE SERVICE------------------------------------
+          curl http://localhost:3000
