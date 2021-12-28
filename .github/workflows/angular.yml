@@ -25,11 +25,22 @@ jobs:
           
       - name: build-app
         run: |
-          git clone https://github.com/vmware/data-annotator-for-machine-learning.git master
+          git clone https://github.com/Kai-Qiao/data-annotator-for-machine-learning.git master
           cd master/annotation-app
           npm i
       
       - name: run-al
         run: |
           cd master/annotation-app
-          npm start
+          npm start &
+          
+      - name: build-service
+        run: |
+          cd master/annotation-service
+          npm i
+
+      - name: run-al
+        run: |
+          cd master/annotation-service
+          npm start &
+
