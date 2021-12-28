@@ -1,4 +1,4 @@
-name: TEST_BUILD_AL
+name: TEST_BUILD_ANGULAR_NODE
 on:
   push:
     branches: [ master ]
