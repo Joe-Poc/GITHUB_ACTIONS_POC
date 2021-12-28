@@ -44,6 +44,7 @@ jobs:
         run: |
           cd master/annotation-service
           npm start &
+          sleep 15
 
       - name: connect-application
         run: |
