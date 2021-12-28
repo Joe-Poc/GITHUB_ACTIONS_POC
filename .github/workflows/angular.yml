@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x, 16.x]
+#         node-version: [10.x, 12.x, 14.x, 15.x, 16.x]
+        node-version: [12.x]
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,6 +34,7 @@ jobs:
         run: |
           cd master/annotation-app
           npm start &
+          sleep 10
           
 #       - name: build-service
 #         run: |
@@ -47,4 +49,4 @@ jobs:
       - name: connect-application
         run: |
           sleep 10
-          curl localhost:4200
+          curl http://localhost:4200
