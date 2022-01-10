@@ -27,6 +27,8 @@ jobs:
         run: |
           git clone https://github.com/Joe-Poc/data-annotator-for-machine-learning.git master
           cd master/annotation-app
+          npm --version
+          node --version
           CI=false npm install
           CI=false npm run build --if-present
 
