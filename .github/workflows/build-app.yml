@@ -25,7 +25,7 @@ jobs:
           
       - name: build-app
         run: |
-          git clone https://github.com/Kai-Qiao/data-annotator-for-machine-learning.git master
+          git clone https://github.com/Joe-Poc/data-annotator-for-machine-learning.git master
           cd master/annotation-app
           CI=false npm install
           CI=false npm run build --if-present
