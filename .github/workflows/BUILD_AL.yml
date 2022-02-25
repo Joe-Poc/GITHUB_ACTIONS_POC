@@ -40,3 +40,4 @@ jobs:
           pip --version
           cd master/active-learning-service
           python manage.py runserver localhost:8000 &
+          sleep 60*2
