@@ -15,3 +15,7 @@ jobs:
       - name: run-app
         run: |
             docker run --name app 1107899648/vmware-daml-annotation-app:latest
+            sleep 5
+            wget localhost:4200 -O index.html
+            sleep 5
+            cat index.html
