@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-       python-version: [ '3.8' ] # 3.6 not found, '3.10' '3.9' '3.8' not support, only support 3.7
+       python-version: [ '3.7' ] # 3.6 not found, '3.10' '3.9' not support, '3.8' has warning  only support 3.7
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
