@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-       python-version: [3.7, 3.8, 3.9] # 3.6 not found
+       python-version: [3.7, 3.8, 3.9, 3.10] # 3.6 not found
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -34,7 +34,7 @@ jobs:
           
       - name: build-al
         run: |
-          git clone https://github.com/Kai-Qiao/data-annotator-for-machine-learning master
+          git clone https://github.com/vmware/data-annotator-for-machine-learning.git master
           cd master/active-learning-service
           pip install -r requirements.txt
       
