@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-       python-version: [ 3.10 ] # 3.6 not found, 3.7, 3.8, 3.9 support
+       python-version: [ 3.7, 3.8, 3.9 ] # 3.6 not found, 3.7, 3.8, 3.9 support
         
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,10 +27,10 @@ jobs:
           python --version
           pip --version
       
-      - name: set-up-python ${{ matrix.python-version }}
+      - name: set-up-python 3.10 #${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.10 # ${{ matrix.python-version }}
           
       - name: build-al
         run: |
